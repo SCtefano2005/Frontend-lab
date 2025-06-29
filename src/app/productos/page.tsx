@@ -2,8 +2,15 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
+type Producto = {
+  codProducto: number;
+  nomPro: string;
+  precioProducto: number;
+  stockProducto: number;
+};
+
 export default function ProductosPage() {
-  const [productos, setProductos] = useState<any[]>([]);
+  const [productos, setProductos] = useState<Producto[]>([]);
   const router = useRouter();
 
   const fetchProductos = async () => {
