@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:3001/api/productos';
+const BASE_URL = 'https://backend-lab-coello.onrender.com/api/productos';
 
 export async function getProductos() {
   const res = await fetch(BASE_URL);
