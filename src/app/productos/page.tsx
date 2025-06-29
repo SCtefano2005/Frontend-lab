@@ -7,14 +7,14 @@ export default function ProductosPage() {
   const router = useRouter();
 
   const fetchProductos = async () => {
-    const res = await fetch('http://localhost:3001/api/productos');
+    const res = await fetch('https://backend-lab-coello.onrender.com/api/productos');
     const data = await res.json();
     setProductos(data);
   };
 
   const eliminarProducto = async (codProducto: number) => {
     if (!confirm('¿Estás seguro de eliminar este producto?')) return;
-    const res = await fetch(`http://localhost:3001/api/productos/${codProducto}`, {
+    const res = await fetch(`https://backend-lab-coello.onrender.com/api/productos/${codProducto}`, {
       method: 'DELETE',
     });
     if (res.status === 204) {
